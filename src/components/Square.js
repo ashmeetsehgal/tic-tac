@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Square = ({ clickFun, value }) => (
-<button className="square" onClick={clickFun}>
+const Square = ({ clickFunction, value }) => (
+<button className="square" onClick={clickFunction}>
   {value}
 </button>
 )

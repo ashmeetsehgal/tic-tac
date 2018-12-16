@@ -8,14 +8,12 @@ export default class Board extends Component {
     xTurn: true,
   }
 
-  renderSquare = i => {
-    return (
-      <Square
-        value={this.state.squares[i]}
-        clickFun={this.handleClick(i)}
-      />
-    )
-  }
+  renderSquare = i => (
+    <Square
+      value={this.state.squares[i]}
+      clickFunction={this.handleClick(i)}
+    />
+  )
 
   handleClick = (i) => () => {
     const { squares, xTurn } = this.state
@@ -56,13 +54,11 @@ export default class Board extends Component {
   }
 
   getStatus = () => {
-
     const { squares } = this.state
-
     const winner = this.calculateWinner(squares)
 
     if (winner) {
-      return `Winner is  ${winner}`
+      return `Winner is ${winner}`
     } else if (this.isGameOver()) {
       return 'Awwww its a draw'
     }
